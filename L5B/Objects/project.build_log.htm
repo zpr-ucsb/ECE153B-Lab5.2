@@ -1,0 +1,157 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.38.0.0
+Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Zachary Richatds, UCSB, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.38.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.19
+Assembler:       Armasm.exe V6.19
+Linker/Locator:  ArmLink.exe V6.19
+Library Manager: ArmAr.exe V6.19
+Hex Converter:   FromElf.exe V6.19
+CPU DLL:         SARMCM3.DLL V5.38.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.1.0.0
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+C:\Users\Zach\Downloads\Lab5-main\Lab5-main\L5B\project.uvprojx
+Project File Date:  05/25/2023
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.19', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Rebuild target 'Target 1'
+src/ADC.c(1): warning: In file included from...
+src/ADC.h(4): warning: In file included from...
+src/stm32l476xx.h(12): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *           - Macros to access peripheral<92>s registers hardware
+                                           ^
+src/ADC.c(32): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+void ADC_Common_Configuration() {
+                             ^
+                              void
+2 warnings generated.
+compiling ADC.c...
+assembling startup_stm32l476xx.s...
+src/DAC.c(1): warning: In file included from...
+src/stm32l476xx.h(12): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *           - Macros to access peripheral<92>s registers hardware
+                                           ^
+src/DAC.c(11): warning: no previous prototype for function 'DAC_Write_Value' [-Wmissing-prototypes]
+void DAC_Write_Value(uint32_t value) {
+     ^
+src/DAC.c(11): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void DAC_Write_Value(uint32_t value) {
+^
+static 
+src/DAC.c(16): warning: no previous prototype for function 'DAC_Init' [-Wmissing-prototypes]
+void DAC_Init(void) {
+     ^
+src/DAC.c(16): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void DAC_Init(void) {
+^
+static 
+3 warnings generated.
+compiling DAC.c...
+src/main.c(10): warning: In file included from...
+src/ADC.h(4): warning: In file included from...
+src/stm32l476xx.h(12): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *           - Macros to access peripheral<92>s registers hardware
+                                           ^
+src/main.c(40): warning: implicit conversion loses floating-point precision: 'double' to 'float' [-Wimplicit-float-conversion]
+        voltage = (result*3.3) / 4096;
+                ~ ~~~~~~~~~~~~~^~~~~~
+src/main.c(42): warning: implicit conversion turns floating-point number into integer: 'double' to 'uint32_t' (aka 'unsigned int') [-Wfloat-conversion]
+        TIM2->CCR1 = (voltage/3.3) * 4096;                             // Set CCR value equal to ADC result
+                   ~ ~~~~~~~~~~~~~~^~~~~~
+src/main.c(42): warning: implicit conversion increases floating-point precision: 'volatile float' to 'double' [-Wdouble-promotion]
+        TIM2->CCR1 = (voltage/3.3) * 4096;                             // Set CCR value equal to ADC result
+                      ^~~~~~~~
+src/main.c(18): warning: no previous extern declaration for non-static variable 'result' [-Wmissing-variable-declarations]
+uint32_t volatile result;
+                  ^
+src/main.c(18): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint32_t volatile result;
+^
+src/main.c(19): warning: no previous extern declaration for non-static variable 'voltage' [-Wmissing-variable-declarations]
+float volatile voltage;
+               ^
+src/main.c(19): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+float volatile voltage;
+^
+6 warnings generated.
+compiling main.c...
+src/EXTI.c(1): warning: In file included from...
+src/EXTI.h(4): warning: In file included from...
+src/stm32l476xx.h(12): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *           - Macros to access peripheral<92>s registers hardware
+                                           ^
+src/EXTI.c(55): warning: no newline at end of file [-Wnewline-eof]
+}
+ ^
+src/EXTI.c(37): warning: no previous prototype for function 'EXTI15_10_IRQHandler' [-Wmissing-prototypes]
+void EXTI15_10_IRQHandler(void) {
+     ^
+src/EXTI.c(37): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void EXTI15_10_IRQHandler(void) {
+^
+static 
+3 warnings generated.
+compiling EXTI.c...
+src/SysClock.c(1): warning: In file included from...
+src/SysClock.h(4): warning: In file included from...
+src/stm32l476xx.h(12): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *           - Macros to access peripheral<92>s registers hardware
+                                           ^
+1 warning generated.
+compiling SysClock.c...
+src/PWM.c(1): warning: In file included from...
+src/PWM.h(4): warning: In file included from...
+src/stm32l476xx.h(12): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *           - Macros to access peripheral<92>s registers hardware
+                                           ^
+src/PWM.c(5): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+void PWM_Init() {
+             ^
+              void
+src/PWM.c(42): warning: no newline at end of file [-Wnewline-eof]
+ 
+ ^
+3 warnings generated.
+compiling PWM.c...
+linking...
+Program Size: Code=3676 RO-data=424 RW-data=4 ZI-data=1652  
+FromELF: creating hex file...
+".\Objects\project.axf" - 0 Error(s), 18 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.9.0.pack
+                ARM.CMSIS.5.9.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.6.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32L4xx_DFP.2.6.1.pack
+                Keil.STM32L4xx_DFP.2.6.1
+                STMicroelectronics STM32L4 Series Device Support, Drivers and Examples
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/_Target_1
+  C:/Users/Zach/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include
+  C:/Users/Zach/AppData/Local/Arm/Packs/Keil/STM32L4xx_DFP/2.6.1/Drivers/CMSIS/Device/ST/STM32L4xx/Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.6.0
+Build Time Elapsed:  00:00:00
+</pre>
+</body>
+</html>
